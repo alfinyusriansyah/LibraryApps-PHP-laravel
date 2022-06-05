@@ -10,6 +10,7 @@ class Horror
     private static $horror_book = [
         [
             "title" => "Misteri Boneka Okiku Asal Jepang yang Rambutnya Terus Tumbuh",
+            "img" => "2842657401.jpg",
             "author" => "reza darmawan",
             "slug" => "horor 1",
             "body" => "Boneka Okiku merupakan sebuah boneka menyeramkan yang berada di sebuah kuil
@@ -20,6 +21,7 @@ class Horror
     
             [
             'title' => "Lampor, Si Pembawa Keranda",
+            'img' => "963530898.jpg",
             'author' => "Alfin",
             "slug" => "horor 2",
             "body" => " Indonesia memiliki berbagai cerita yang identik 
@@ -28,7 +30,13 @@ class Horror
             ]
     ];
 
+    # collect bisa dijadikan sebagai sebuah penyimpanan dari kumpulan sebuah data.
     public static function all(){
-        return self::$horror_book;
+        return collect(self::$horror_book);
     }
+
+    public static function find($slug){
+        $book_horror = static::all();
+        return $book_horror -> firstWhere('slug', $slug);
+    } 
 }

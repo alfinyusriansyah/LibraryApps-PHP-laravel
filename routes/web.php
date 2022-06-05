@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\FiksiController;
+use App\Http\Controllers\HorrorController;
 use App\Models\Fiksi;
 use App\Models\Horror;
 use Illuminate\Support\Facades\Route;
@@ -36,26 +39,7 @@ Route::get('/about', function () {
         "img" => "img/alfin.jpg"]);
 });
 
-Route::get('/fiksi', function () {
-    return view('fiksi', [
-        'title' => 'fiksi',
-        'books' => Fiksi::all()
-
-    ]);
-});
-    
-
-Route::get('/fiksi/{slug}', function ($slug) {
-
-    return view('fiksis',[
-        "title" => "single post",
-        "books_fiksi" => Fiksi::find($slug)
-    ]);
-});
-
-Route::get('/horror', function(){
-    return view('horror', [
-        'title' => 'horror',
-        'books_horror' => Horror::all()
-    ]);
-});
+Route::get('/fiksi', [FiksiController::class, 'index']);
+Route::get('/fiksi/{slug}', [FiksiController::class, 'show']);
+Route::get('/horror', [HorrorController::class, 'index']);
+Route::get('horror/{slug}', [HorrorController::class, 'show']);

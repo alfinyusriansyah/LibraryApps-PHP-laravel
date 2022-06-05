@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('container')
-    
+    <h1>List Buku Fiksi</h1>
     @foreach ($books as $book)
     <article class="mt-4">
-    <h1>{{ $book["title"] }}</h1>
-    <h5>by : {{ $book["author"] }}</h5>
+    <p></p>
+    <h3>{{ $book["title"] }}</h3>
     <p>
         {{ $book["body"] }} <a href="/fiksi/{{ $book["slug"] }}">baca selengkapnya</a> 
     </p>
