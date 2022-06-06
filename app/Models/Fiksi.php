@@ -8,6 +8,7 @@ class Fiksi
         [
             "title" => "Buku 1",
             "author" => "reza darmawan",
+            "img" => "gambar1.jpg",
             "slug" => "buku ke 1",
             "body" => "Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan 
             penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks 
@@ -17,6 +18,7 @@ class Fiksi
             [
             'title' => "Buku 2",
             'author' => "Alfin",
+            "img" => "images.jpg",
             "slug" => "buku ke 2",
             "body" => "Image captioning is a challenge in computer vision research. 
             This paper extends research on automatic image captioning generation in 
