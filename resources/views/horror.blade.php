@@ -8,9 +8,7 @@
     <img src="/img/{{$horror['img'] }}" alt="" width="200" class="img-thumbnail rounded border border-dark">
     <p></p>
     <h5>by : {{ $horror["author"] }}</h5>
-    <p>
-        {{ $horror["body"] }} <a href="/horror/{{ $horror["slug"] }}">baca selengkapnya</a> 
-    </p>
+        {{ $horror["excerpt"] }} <a href="/horror/{{ $horror["id"] }}">baca selengkapnya</a> 
     </article>    
     @endforeach
 
