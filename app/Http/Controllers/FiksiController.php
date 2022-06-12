@@ -15,10 +15,10 @@ class FiksiController extends Controller
         ]);
     }
 
-    public function show($slug){
+    public function show(Fiksi $fiksi){
         return view('fiksis',[
             "title" => "single post",
-            "books_fiksi" => Fiksi::find($slug)
+            "books_fiksi" => $fiksi
         ]);
     }    
 }

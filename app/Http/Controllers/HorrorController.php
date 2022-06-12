@@ -13,10 +13,10 @@ class HorrorController extends Controller
         ]);
     }
 
-    public function show($slug){
+    public function show(Horror $horror){
         return view('horrors',[
             "title" => "single post",
-            "book_horror" => Horror::find($slug)
+            "book_horror" => $horror
         ]);
     }
 }

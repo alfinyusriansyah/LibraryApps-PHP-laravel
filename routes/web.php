@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FiksiController;
 use App\Http\Controllers\HorrorController;
+use App\Models\Author;
 use App\Models\Fiksi;
 use App\Models\Horror;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,14 @@ Route::get('/about', function () {
 });
 
 Route::get('/fiksi', [FiksiController::class, 'index']);
-Route::get('/fiksi/{slug}', [FiksiController::class, 'show']);
+Route::get('/fiksi/{fiksi:slug}', [FiksiController::class, 'show']);
 Route::get('/horror', [HorrorController::class, 'index']);
-Route::get('horror/{slug}', [HorrorController::class, 'show']);
+Route::get('horror/{horror:slug}', [HorrorController::class, 'show']);
+
+Route::get('/authors/{author:slug}', function (Author $author){
+    return view('author', [
+        'title' => $author ->name,
+        'books' => $author ->fiksi,
+        'author' => $author ->name
+    ]);
+});

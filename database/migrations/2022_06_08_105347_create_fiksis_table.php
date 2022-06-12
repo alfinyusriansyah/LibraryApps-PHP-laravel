@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('fiksis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id');
             $table->string('title');
+            $table->string('slug') ->unique();
             $table->text('excerpt');
             $table->text('body');
+            $table->string('img');
             $table->timestamp('publich_at')->nullable();
             $table->timestamps();
         });

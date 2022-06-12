@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('horrors', function (Blueprint $table) {
-            $table->timestamp('publich_at')->nullable();
+        Schema::create('authors', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('horrors', function (Blueprint $table) {
-            $table->dropColumn('publich_at')->nullable();
-        });
+        Schema::dropIfExists('authors');
     }
 };

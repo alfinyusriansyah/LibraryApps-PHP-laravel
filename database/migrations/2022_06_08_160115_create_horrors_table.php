@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('horrors', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id');
             $table->string('title');
-            $table->string('author');
+            $table->string('slug') -> unique();
             $table->text('excerpt');
             $table->text('body');
+            $table->string('img');
+            $table->timestamp('publich_at')->nullable();
             $table->timestamps();
         });
     }

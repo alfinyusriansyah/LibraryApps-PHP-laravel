@@ -5,14 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Horror extends Model
+class Author extends Model
 {
     use HasFactory;
-    // protected $fillable = ['title','author','excerpt','body', 'img'];
     protected $guarded = ['id'];
 
-    public function author()
+    public function fiksi()
     {
-        return $this->belongsTo(Author::class);
+        return $this->hasMany(Fiksi::class);
+    }
+
+    public function horror()
+    {
+        return $this->hasMany(Horror::class);
     }
 }
