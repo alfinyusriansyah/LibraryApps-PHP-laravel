@@ -45,10 +45,18 @@ Route::get('/fiksi/{fiksi:slug}', [FiksiController::class, 'show']);
 Route::get('/horror', [HorrorController::class, 'index']);
 Route::get('horror/{horror:slug}', [HorrorController::class, 'show']);
 
-Route::get('/authors/{author:slug}', function (Author $author){
-    return view('author', [
-        'title' => $author ->name,
-        'books' => $author ->fiksi,
-        'author' => $author ->name
+Route::get('/authors/{authorf:slug}', function (Author $authorf){
+    return view('authorf', [
+        'title' => $authorf ->name,
+        'books' => $authorf ->fiksi, 
+        'author' => $authorf ->name
+    ]);
+});
+
+Route::get('/authors/{authorh:slug}', function (Author $authorh){
+    return view('authorh', [
+        'title' => $authorh ->name,
+        'books' => $authorh ->horror, 
+        'author' => $authorh ->name
     ]);
 });

@@ -5,11 +5,11 @@
     
     @foreach ($books as $book)
 
-    <article class="mt-4">
+    <article class="mt-4 mb-5 border-bottom border-top" >
     <p></p>
-    <h3>{{ $book-> title }}</h3>
+    <h3>{{ $book->title }}</h3>
     <p></p>
-        {{ $book->excerpt }} <a href="/fiksi/{{ $book->slug }}">baca selengkapnya</a> 
+        {{ $book->excerpt }} <a href="/horror/{{ $book->slug }}">baca selengkapnya</a> 
     </article>    
     @endforeach
 
